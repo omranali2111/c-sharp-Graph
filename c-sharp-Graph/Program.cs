@@ -34,5 +34,8 @@ internal class Program
 
         Console.WriteLine("\nDFS Traversal:");
         graph.BFS("D");
+
+        Console.WriteLine("\nDFS recursivly Traversal:");
+        graph.DFSrecursive("D");
     }
 }
