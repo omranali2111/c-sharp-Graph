@@ -30,6 +30,9 @@ internal class Program
         }
 
         Console.WriteLine("\nBFS Traversal:");
-        graph.BFS("A");
+        graph.BFS("D");
+
+        Console.WriteLine("\nDFS Traversal:");
+        graph.BFS("D");
     }
 }

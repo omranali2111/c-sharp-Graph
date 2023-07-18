@@ -70,5 +70,30 @@ namespace c_sharp_Graph
             }
         }
 
+        public void DFS(string vertex)
+        {
+            Dictionary<string, bool> visited = new Dictionary<string, bool>();
+            Stack<string> stack = new Stack<string>();
+
+            visited[vertex] = true;
+            stack.Push(vertex);
+
+            while (stack.Count != 0)
+            {
+                vertex = stack.Pop();
+                Console.WriteLine("next => " + vertex);
+
+                foreach (string neighbor in graph[vertex])
+                {
+                    if (!visited.ContainsKey(neighbor))
+                    {
+                        visited[neighbor] = true;
+                        stack.Push(neighbor);
+                    }
+                }
+            }
+        }
+
+
     }
 }
