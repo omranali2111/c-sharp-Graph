@@ -28,5 +28,8 @@ internal class Program
             Console.WriteLine("Vertex: " + vertex.Key);
             Console.WriteLine("Neighbors: " + string.Join(", ", vertex.Value));
         }
+
+        Console.WriteLine("\nBFS Traversal:");
+        graph.BFS("A");
     }
 }

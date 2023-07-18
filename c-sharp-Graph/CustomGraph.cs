@@ -45,5 +45,30 @@ namespace c_sharp_Graph
         {
             return graph;
         }
+
+        public void BFS(string vertex)
+        {
+            Dictionary<string, bool> visited = new Dictionary<string, bool>();
+            Queue<string> queue = new Queue<string>();
+
+            visited[vertex] = true;
+            queue.Enqueue(vertex);
+
+            while (queue.Count != 0)
+            {
+                vertex = queue.Dequeue();
+                Console.WriteLine("next => " + vertex);
+
+                foreach (string neighbor in graph[vertex])
+                {
+                    if (!visited.ContainsKey(neighbor))
+                    {
+                        visited[neighbor] = true;
+                        queue.Enqueue(neighbor);
+                    }
+                }
+            }
+        }
+
     }
 }
