@@ -72,22 +72,27 @@ namespace c_sharp_Graph
 
         public void DFS(string vertex)
         {
-            Dictionary<string, bool> visited = new Dictionary<string, bool>();
+           HashSet<string> visited=new HashSet<string>();
             Stack<string> stack = new Stack<string>();
 
-            visited[vertex] = true;
+          
             stack.Push(vertex);
 
             while (stack.Count != 0)
             {
-                vertex = stack.Pop();
-                Console.WriteLine("next => " + vertex);
+                string currentvertex = stack.Pop();
+                if(!visited.Contains(currentvertex))
+                {
+                    Console.WriteLine("next => " + vertex);
+                    visited.Add(currentvertex);
+                }
+               
 
                 foreach (string neighbor in graph[vertex])
                 {
-                    if (!visited.ContainsKey(neighbor))
+                    if (!visited.Contains(neighbor))
                     {
-                        visited[neighbor] = true;
+                       
                         stack.Push(neighbor);
                     }
                 }
