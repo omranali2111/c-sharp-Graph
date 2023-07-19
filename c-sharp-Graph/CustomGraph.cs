@@ -92,7 +92,7 @@ namespace c_sharp_Graph
                 {
                     if (!visited.Contains(neighbor))
                     {
-                       
+
                         stack.Push(neighbor);
                     }
                 }
